@@ -6,9 +6,7 @@
      <a href="#requisitos">Functional Requirements|</a>
      <a href="#backlog">Product Backlog |</a>
      <a href="#cronograma">Release Schedule |</a>
-     <a href="#tecnologias">Technologies</a>
-     
-     
+     <a href="#tecnologias">Technologies</a>  
 </div>
 
 <span id="sobre">
@@ -32,6 +30,7 @@ By automatically generating insightful reports, the platform not only reduces re
 - <a href="https://github.com/QuantumBitBR/API_6SEM_BACK" >Back-end Repository</a>
 - <a href="https://github.com/QuantumBitBR/API_6SEM_FRONT" >Front-end Repository</a>
 - <a href="https://www.figma.com/design/Bj4I4neHqiob9svy5Pw7nj/6SEM_Wireframe?node-id=0-1&t=DrLhuD78MEdMlUF0-1">Figma - WireFrame</a>
+- <a href="https://colab.research.google.com/drive/1MeHgPQNOjSO6QcSH3VmlZtNALWgi6mm8?usp=sharing">Artificial Intelligence Training</a>
 - <a href="https://github.com/QuantumBitBR/API_6SEM/wiki/Sprint-1">Sprint 1</a>
 - <a href="https://github.com/QuantumBitBR/API_6SEM/wiki/Sprint-2">Sprint 2</a>
 
@@ -102,8 +101,7 @@ Jhony Santos | Product Owner | <a href="https://github.com/santosjhony12"><img s
 
 ## Used Technologies
 
-<img width="1584" height="396" alt="Readme TechHorizon 2S (1)" src="https://github.com/user-attachments/assets/e02c295b-1d80-4381-a565-037e02a009d6" />
-
+![WhatsApp Image 2025-10-26 at 19 11 18](https://github.com/user-attachments/assets/3d327c62-65dc-4822-ad10-b8db9fe3a088)
 
 
 
