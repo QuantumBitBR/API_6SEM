@@ -55,15 +55,15 @@
 | **Rank** | **Priority** | **User Story** | **Related Requirements** | **Estimate** | **Sprint**
  ------ | ------------------------- |  ------------------------- | ------------------------ | ----- | ----|
 1 | High | As a support manager, I want to receive suggestive insights from the historical knowledge base so that I can make better strategic decisions without relying on complex dashboards. | FR6 | 7 | 1
-2| High | As a user, I want to search tickets by keywords or questions to quickly find old tickets.                                                               | FR1            | 7 | 1
-3| High | As a support agent, I want the system to suggest solutions based on previous tickets to solve problems faster and reduce rework.                        | FR4, FR6         | 7 | 1
-4 | High | As an administrator, I want data to be processed and stored anonymously before use to ensure LGPD compliance.                                           | FR2                 | 5 | 1
-6| Medium | As a user, I want to record that I used certain information to feed the insights database.                                                              | FR3, FR5       | 3 | 2
-7 | Medium | As a user, I want the system to return solutions ranked by relevance so that I can find the most useful answers quickly.                              | FR4, FR6          | 5 | 2
-8| Medium | As a support manager, I want to receive suggestive insights generated dynamically from ongoing system usage so that I can adapt my strategies based on current user behavior without relying on complex dashboards. | FR5                 | 9 | 2
-9 | Low | As an administrator, I want the insights to be viewable by support team level to ensure the most efficient distribution of information.               | FR5, FR8      | 6 | 3
-10 | Low | As a user, I want to provide feedback on returned solutions to evaluate answers and improve the knowledge base.                                         | FR3, FR5, FR7                 | 2 | 3
-11| Low | As a support user or manager, I want to feed the knowledge base with new problems and solutions that arise over time.                                   | FR3, FR4                 | 5 | 3
+2 | High | As an administrator, I want data to be processed and stored anonymously before use to ensure LGPD compliance.                                           | FR2                 | 5 | 1
+3| High | As a user, I want to search tickets by keywords or questions to quickly find old tickets.                                                               | FR1            | 7 | 1
+4| High | As a support agent, I want the system to suggest solutions based on previous tickets to solve problems faster and reduce rework.                        | FR4, FR6         | 7 | 1
+5| Medium | As a user, I want to record that I used certain information to feed the insights database.                                                              | FR3, FR5       | 3 | 2
+6 | Medium | As a user, I want the system to return solutions ranked by relevance so that I can find the most useful answers quickly.                              | FR4, FR6          | 5 | 2
+7| Medium | As a support manager, I want to receive suggestive insights generated dynamically from ongoing system usage so that I can adapt my strategies based on current user behavior without relying on complex dashboards. | FR5                 | 9 | 2
+8 | Low | As an administrator, I want the insights to be viewable by support team level to ensure the most efficient distribution of information.               | FR5, FR8      | 6 | 3
+9 | Low | As a user, I want to provide feedback on returned solutions to evaluate answers and improve the knowledge base.                                         | FR3, FR5, FR7                 | 2 | 3
+10| Low | As a support user or manager, I want to feed the knowledge base with new problems and solutions that arise over time.                                   | FR3, FR4                 | 5 | 3
 
 <span id="cronograma">
 
