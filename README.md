@@ -23,8 +23,8 @@
 
 - <a href=""/>User guide</a>
 - <a href="">Instalation guide</a>
-- <a href="">Development standards</a>
-- <a href="">Sprint 1</a>
+- <a href="https://github.com/QuantumBitBR/API_6SEM/wiki/Development-Standards">Development standards</a>
+- <a href="https://github.com/QuantumBitBR/API_6SEM/wiki/Sprint-1">Sprint 1</a>
 
 
 
