@@ -37,14 +37,15 @@
 
 | **ID**  | **Functional Requirement**                       | **Detailed Description**                                                                                                                                                                                                 |
 | ------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **FR1** | Allow ticket search by keywords                  | The system must allow users to search for tickets using one or multiple keywords, returning results ranked by relevance. The search should handle partial matches and common variations of terms.                        |
+| **FR1** | Allow ticket search by keywords                  | The system must allow users to search for tickets using one or multiple keywords, returning results.                        |
 | **FR2** | Process data according to LGPD before use        | Before storing or using ticket data, the system must process and anonymize any personal information (names, emails, IDs). It must also allow data removal upon user request, ensuring compliance with LGPD.              |
 | **FR3** | Record user-performed queries                    | Every query executed by a user must be recorded with metadata (timestamp, keywords used, and user type). This log will be used to generate statistics, identify recurring issues, and provide feedback for improvements. |
-| **FR4** | Return suggested solutions based on history      | The system must analyze historical tickets and user queries to suggest solutions that match the current search. Suggestions must be ranked by relevance and past success rate.                                           |
-| **FR5** | Generate suggestive insights from tool usage     | The system must analyze user interactions (most common queries, unused suggestions, repeated searches) and generate suggestive insights for process improvement, without requiring dashboards.                           |
-| **FR6** | Enable quick view of the most accessed solutions | The system must highlight and display the most accessed solutions in real time, allowing quick access to frequently used knowledge. This helps reduce response time and training needs.                                  |
-| **FR7** | Feedback on solutions | The system must allow users to provide feedback (useful/not useful) on the suggested solutions to improve relevance over time.
-| **FR8** | Role-based access control | The system must ensure that only authorized users (e.g., admins, support managers) can view insights and manage data.
+| **FR4** | Revoke data usage permission | The system must revoke viewing permissions and anonymize the data for which access has been revoked.       
+| **FR5** | Generate insights based on history database     | The system must generate insights based on history database for process improvement with dashboards.
+| **FR6** | Generate suggestive insights from tool usage     | The system must analyze user interactions (most common queries, unused suggestions, repeated searches) and generate suggestive insights for process improvement, without requiring dashboards.                           |
+| **FR7** | Enable quick view of the most accessed solutions | The system must highlight and display the most accessed solutions in real time, allowing quick access to frequently used knowledge. This helps reduce response time and training needs.                                  |
+| **FR8** | Feedback on solutions | The system must allow users to provide feedback (useful/not useful) on the suggested solutions to improve relevance over time.
+| **FR9** | Role-based access control | The system must ensure that only authorized users (e.g., admins, support managers) can view insights and manage data.
 
 </details>
 
@@ -54,16 +55,17 @@
 
 | **Rank** | **Priority** | **User Story** | **Related Requirements** | **Estimate** | **Sprint**
  ------ | ------------------------- |  ------------------------- | ------------------------ | ----- | ----|
-1 | High | As a support manager, I want to receive quantitative insights from the historical knowledge base so that I can make better strategic decisions without relying on complex dashboards. | FR6 | 8 | 1
-2 | High | As an administrator, I want data to be processed and stored anonymously before use to ensure LGPD compliance.                                           | FR2                 | 5 | 1
+1 | High | As a support manager, I want to receive quantitative insights from the historical knowledge base regarding ticket counts by company, product, status, and category, so that I can make better strategic decisions without relying on complex dashboards. | FR5 | 8 | 1
+2 | High | As an administrator, I want data to be processed and stored anonymously before use to ensure LGPD compliance.                                           | FR2                 | 7 | 1
+3 | High | As an administrator, I want to anonymize user data upon deletion requests so that personal information is protected while ensuring compliance with LGPD. | FR4 | 6 | 1
 3 | High | As a user, I want to search tickets by keywords to quickly find old tickets.                                                               | FR1            | 4 | 1
-4| Medium | As a support agent, I want the system to suggest solutions based on previous tickets to solve problems faster and reduce rework.                        | FR4, FR6         | 6 | 2
+4| Medium | As a support agent, I want the system to suggest solutions based on previous tickets to solve problems faster and reduce rework.                        | FR6         | 6 | 2
 5| Medium | As a user, I want to record that I used certain information to feed the insights database.                                                              | FR3, FR5       | 3 | 2
-6 | Medium | As a user, I want the system to return solutions ranked by relevance so that I can find the most useful answers quickly.                              | FR4, FR6          | 5 | 2
-7| Medium | As a support manager, I want to receive suggestive insights generated dynamically from ongoing system usage so that I can adapt my strategies based on current user behavior without relying on complex dashboards. | FR5                 | 9 | 2
-8 | Low | As an administrator, I want the insights to be viewable by support team level to ensure the most efficient distribution of information.               | FR5, FR8      | 6 | 3
-9 | Low | As a user, I want to provide feedback on returned solutions to evaluate answers and improve the knowledge base.                                         | FR3, FR5, FR7                 | 2 | 3
-10| Low | As a support user or manager, I want to feed the knowledge base with new problems and solutions that arise over time.                                   | FR3, FR4                 | 5 | 3
+6 | Medium | As a user, I want the system to return solutions ranked by relevance so that I can find the most useful answers quickly.                              | FR6          | 5 | 2
+7| Medium | As a support manager, I want to receive suggestive insights generated dynamically from ongoing system usage so that I can adapt my strategies based on current user behavior without relying on complex dashboards. | FR6                | 9 | 2
+8 | Low | As an administrator, I want the insights to be viewable by support team level to ensure the most efficient distribution of information.               | FR7, FR9      | 6 | 3
+9 | Low | As a user, I want to provide feedback on returned solutions to evaluate answers and improve the knowledge base.                                         | FR8                 | 2 | 3
+10| Low | As a support user or manager, I want to feed the knowledge base with new problems and solutions that arise over time.                                   | FR3, FR8                | 5 | 3
 
 <span id="cronograma">
 
