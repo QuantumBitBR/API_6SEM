@@ -16,7 +16,7 @@
 </p>
 
 ## Solution
-<p>The proposal is to implement an intelligent knowledge search system that reduces repetitive ticket openings by providing quick and relevant consultations in a historical database of problems and solutions. The system works by processing the existing ticket database and enabling intelligent keyword searches, allowing end users to find answers autonomously. All consultations are recorded in real time, which not only improves operational efficiency but also generates valuable insights for both operational and managerial decision-making.
+<p>The solution is an intelligent support management platform that combines fast ticket search, automated strategic insights, and data anonymization to ensure LGPD compliance. This way, users solve issues autonomously, managers make decisions based on clear information, and the ticket history becomes a true organizational intelligence asset.
 </p>
 
 ## Docs Directory
