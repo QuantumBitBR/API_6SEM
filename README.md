@@ -34,17 +34,15 @@
 
 <summary>Click here</summary>
 
-| **ID**  | **Functional Requirement**                       | **Detailed Description**                                                                                                                                                                                                 |
-| ------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **FR1** | Allow ticket search by keywords                  | The system must allow users to search for tickets using one or multiple keywords, returning results.                        |
-| **FR2** | Process data according to LGPD before use        | Before storing or using ticket data, the system must process and anonymize any personal information (names, emails, IDs). It must also allow data removal upon user request, ensuring compliance with LGPD.              |
-| **FR3** | Record user-performed queries                    | Every query executed by a user must be recorded with metadata (timestamp, keywords used, and user type). This log will be used to generate statistics, identify recurring issues, and provide feedback for improvements. |
-| **FR4** | Revoke data usage permission | The system must revoke viewing permissions and anonymize the data for which access has been revoked.       
-| **FR5** | Generate insights based on history database     | The system must generate insights based on history database for process improvement with dashboards.
-| **FR6** | Generate suggestive insights from tool usage     | The system must analyze user interactions (most common queries, unused suggestions, repeated searches) and generate suggestive insights for process improvement, without requiring dashboards.                           |
-| **FR7** | Enable quick view of the most accessed solutions | The system must highlight and display the most accessed solutions in real time, allowing quick access to frequently used knowledge. This helps reduce response time and training needs.                                  |
-| **FR8** | Feedback on solutions | The system must allow users to provide feedback (useful/not useful) on the suggested solutions to improve relevance over time.
-| **FR9** | Role-based access control | The system must ensure that only authorized users (e.g., admins, support managers) can view insights and manage data.
+| ID   | Functional Requirement (EN) | Detailed Description (EN) | Expected Benefits (EN) |
+|------|-----------------------------|---------------------------|------------------------|
+| FR1  | Allow ticket search by keywords | The system must allow users to search tickets using one or multiple keywords, returning all results that contain the searched terms. The functionality should offer speed and accuracy, enabling sorting of results to facilitate ticket analysis and tracking. | - Users can quickly find relevant tickets without manually navigating large volumes of data.<br>- Facilitates identification of patterns, recurring issues, and critical areas.<br>- Provides fast access to relevant information for prioritizing actions or responses to customers. |
+| FR2  | Process data according to LGPD before use | The system must properly process any personal information contained in tickets, such as names, emails, CPF, or other sensitive data, before storing or using it. Additionally, it must allow users to request deletion of their data at any time, ensuring that such requests are handled in accordance with LGPD. This approach ensures the protection of user privacy and compliance with legal obligations. | - Complies with LGPD requirements, avoiding penalties and legal risks.<br>- Minimizes risk of leakage or misuse of sensitive information.<br>- Shows users that their data is handled responsibly and that they can exercise their rights to deletion.<br>- Ensures data is processed and stored securely, reducing vulnerabilities. |
+| FR3  | Revoke permission to use data | The system must ensure that when a user requests the removal of their data, all personal or sensitive information related to them is deleted in accordance with LGPD. This guarantees the protection of personal data and compliance with legal privacy obligations. | - Protection of personal and sensitive data, preventing unauthorized access.<br>- Compliance with LGPD and other applicable data protection regulations. |
+| FR4  | Generate insights from historical database | The system must analyze the ticket history and generate insights related to ticket quantities by company, product, status, category, department, and SLAPlan. This analysis should be presented through interactive dashboards, allowing clear visualization of patterns, trends, and potential bottlenecks in ticket handling. | - Identification of bottlenecks and areas requiring process improvements.<br>- Effective monitoring of SLA compliance and prioritization of critical tickets.<br>- Supports data-driven decision making.<br>- Increases operational efficiency and continuous improvement in customer service.<br>- Clear and fast visualization of trends and patterns across multiple dimensions. |
+| FR5  | Role-based access control | The system must ensure that only authorized users can access ticket insights and manage related data. This includes roles such as administrators, support managers, and other predefined positions. Access control must be permission-based, ensuring each user sees only information compatible with their authorization level. | - Protection of sensitive and strategic company information.<br>- Ensures that only authorized personnel can make decisions or act on data.<br>- Reduces risks of information leakage or misuse.<br>- Compliance with information security standards and internal data governance policies.<br>- Builds user confidence, knowing critical data is protected. |
+| FR6  | Generate trend insights of tickets per product over time | The system must use artificial intelligence to analyze the history of tickets for each product and identify trends over time. This functionality will allow monitoring of complaint volumes, incidents, or support requests, highlighting patterns and significant peaks. | - Proactive visibility on emerging issues for specific products.<br>- Quick identification of patterns and anomalies in tickets.<br>- Supports strategic decision-making and prioritization of corrective actions.<br>- Greater efficiency in managing support and preventing negative impacts. |
+
 
 </details>
 
@@ -52,19 +50,18 @@
      
 ## Product Backlog
 
-| **Rank** | **Priority** | **User Story** | **Related Requirements** | **Estimate** | **Sprint**
- ------ | ------------------------- |  ------------------------- | ------------------------ | ----- | ----|
-1 | High | As a support manager, I want to receive quantitative insights from the historical knowledge base regarding ticket counts by company, product, status, and category, so that I can make better strategic decisions without relying on complex dashboards. | FR5 | 8 | 1
-2 | High | As an administrator, I want data to be processed and stored anonymously before use to ensure LGPD compliance.                                           | FR2                 | 7 | 1
-3 | High | As an administrator, I want to anonymize user data upon deletion requests so that personal information is protected while ensuring compliance with LGPD. | FR4 | 6 | 1
-4 | High | As a user, I want to search tickets by keywords to quickly find old tickets.                                                               | FR1            | 4 | 1
-5| Medium | As a support agent, I want the system to suggest solutions based on previous tickets to solve problems faster and reduce rework.                        | FR6         | 6 | 2
-6| Medium | As a user, I want to record that I used certain information to feed the insights database.                                                              | FR3, FR5       | 3 | 2
-7 | Medium | As a user, I want the system to return solutions ranked by relevance so that I can find the most useful answers quickly.                              | FR6          | 5 | 2
-8| Medium | As a support manager, I want to receive suggestive insights generated dynamically from ongoing system usage so that I can adapt my strategies based on current user behavior without relying on complex dashboards. | FR6                | 9 | 2
-9 | Low | As an administrator, I want the insights to be viewable by support team level to ensure the most efficient distribution of information.               | FR7, FR9      | 6 | 3
-10 | Low | As a user, I want to provide feedback on returned solutions to evaluate answers and improve the knowledge base.                                         | FR8                 | 2 | 3
-11| Low | As a support user or manager, I want to feed the knowledge base with new problems and solutions that arise over time.                                   | FR3, FR8                | 5 | 3
+| Rank | Priority | User Story (EN) | Related Requirements | Estimate | Sprint |
+|------|---------|-----------------|--------------------|---------|--------|
+| 1 | High | As a user, I want to receive quantitative insights from the historical database on ticket quantities by company, product, status, and category, so that I can make better strategic decisions without relying on complex dashboards. | FR4 | 8 | 1 |
+| 2 | High | As an administrator, I want personal data to be processed and stored only as long as necessary, and completely deleted when no longer required or upon request, so that the system complies with LGPD and user privacy is guaranteed. | FR2 | 7 | 1 |
+| 3 | High | As an administrator, I want to delete user data upon a deletion request, ensuring protection of personal information and compliance with LGPD. | FR3 | 6 | 1 |
+| 4 | High | As a user, I want to search tickets by keywords so that I can quickly locate old tickets, identify patterns, track ticket history, and resolve issues more efficiently. | FR1 | 8 | 1 |
+| 5 | Medium | As a user, I want to receive quantitative insights from the historical database on ticket quantities by department and SLAPlan, so that I can make better strategic decisions without relying on dashboards. | FR4 | 6 | 2 |
+| 6 | Medium | As a user, I want the system to use artificial intelligence to analyze the history of tickets for each product, so that patterns, trends, and peaks in complaint or incident volumes are automatically identified. | FR6 | 9 | 2 |
+| 7 | Medium | As a user, I want to visualize insights generated by AI analysis in clear and interactive dashboards, so that I can monitor ticket volumes and make proactive decisions based on detected patterns and peaks. | FR6 | 7 | 3 |
+| 8 | Low | As a user, I want the system to generate written reports based on AI-provided insights, so that I can easily understand patterns, trends, and peaks in tickets and share this information clearly with my team or managers. | FR6 | 8 | 3 |
+| 9 | Low | As a system administrator, I want only authorized users to access ticket insights and manage related data, so that sensitive information is protected and each user sees only data compatible with their authorization level. | FR5 | 4 | 3 |
+
 
 <span id="cronograma">
 
