@@ -1,0 +1,6 @@
+[submodule "API_6SEM_FRONT"]
+	path = API_6SEM_FRONT
+	url = https://github.com/QuantumBitBR/API_6SEM_FRONT
+[submodule "API_6SEM_BACK"]
+	path = API_6SEM_BACK
+	url = https://github.com/QuantumBitBR/API_6SEM_BACK
