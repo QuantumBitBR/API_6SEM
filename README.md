@@ -21,8 +21,8 @@
 
 ## Docs Directory
 
-- <a href=""/>User guide</a>
-- <a href="">Instalation guide</a>
+- <a href="https://github.com/QuantumBitBR/API_6SEM/wiki/User-guide"/>User guide</a>
+- <a href="https://github.com/QuantumBitBR/API_6SEM/wiki/Installation-Guide-%E2%80%93-API_6SEM">Instalation guide</a>
 - <a href="https://github.com/QuantumBitBR/API_6SEM/wiki/Development-Standards">Development standards</a>
 - <a href="https://github.com/QuantumBitBR/API_6SEM/wiki/Sprint-1">Sprint 1</a>
 - <a href="https://quantumbitbr.atlassian.net/jira/software/projects/QB/boards/1/backlog?atlOrigin=eyJpIjoiZTdlNzkwMTZkNmNkNDY5Y2I1ZTVkYTI0ZDlmMWUzODEiLCJwIjoiaiJ9" >Jira</a>
