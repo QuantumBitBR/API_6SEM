@@ -7,6 +7,9 @@
      <a href="#backlog">Product Backlog |</a>
      <a href="#cronograma">Release Schedule |</a>
      <a href="#tecnologias">Technologies</a>
+     <a href="https://github.com/QuantumBitBR/API_6SEM_BACK" >Back-end Repository</a>
+     <a href="https://github.com/QuantumBitBR/API_6SEM_FRONT" >Front-end Repository</a>
+     
 </div>
 
 <span id="sobre">
