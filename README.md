@@ -31,6 +31,7 @@ By automatically generating insightful reports, the platform not only reduces re
 - <a href="https://quantumbitbr.atlassian.net/jira/software/projects/QB/boards/1/backlog?atlOrigin=eyJpIjoiZTdlNzkwMTZkNmNkNDY5Y2I1ZTVkYTI0ZDlmMWUzODEiLCJwIjoiaiJ9" >Jira</a>
 - <a href="https://github.com/QuantumBitBR/API_6SEM_BACK" >Back-end Repository</a>
 - <a href="https://github.com/QuantumBitBR/API_6SEM_FRONT" >Front-end Repository</a>
+- <a href="https://www.figma.com/design/Bj4I4neHqiob9svy5Pw7nj/6SEM_Wireframe?node-id=0-1&t=DrLhuD78MEdMlUF0-1">Figma - WireFrame</a>
 - <a href="https://github.com/QuantumBitBR/API_6SEM/wiki/Sprint-1">Sprint 1</a>
 - <a href="https://github.com/QuantumBitBR/API_6SEM/wiki/Sprint-2">Sprint 2</a>
 
