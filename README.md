@@ -101,8 +101,7 @@ Jhony Santos | Product Owner | <a href="https://github.com/santosjhony12"><img s
 
 ## Used Technologies
 
-<img width="1584" height="396" alt="Readme TechHorizon 2S (1)" src="https://github.com/user-attachments/assets/e02c295b-1d80-4381-a565-037e02a009d6" />
-
+![WhatsApp Image 2025-10-26 at 19 11 18](https://github.com/user-attachments/assets/3d327c62-65dc-4822-ad10-b8db9fe3a088)
 
 
 
