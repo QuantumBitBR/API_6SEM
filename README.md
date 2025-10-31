@@ -33,7 +33,7 @@ By automatically generating insightful reports, the platform not only reduces re
 - <a href="https://colab.research.google.com/drive/1MeHgPQNOjSO6QcSH3VmlZtNALWgi6mm8?usp=sharing">Artificial Intelligence Training</a>
 - <a href="https://github.com/QuantumBitBR/API_6SEM/wiki/Sprint-1">Sprint 1</a>
 - <a href="https://github.com/QuantumBitBR/API_6SEM/wiki/Sprint-2">Sprint 2</a>
-
+- <a href="https://github.com/QuantumBitBR/API_6SEM/wiki/Sprint-3">Sprint 3</a>
 <span id="requisitos">
      
 ## Functional Requirement
