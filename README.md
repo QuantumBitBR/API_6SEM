@@ -67,9 +67,9 @@ By automatically generating insightful reports, the platform not only reduces re
 | 6 | Medium | As a user, I want the system to use artificial intelligence to analyze the history of tickets for each product, so that patterns, trends, and peaks in complaint or incident volumes are automatically identified. | FR6 | 9 | 2 |
 | 7 | Medium | As a user, I want to filter the dashboards by periods and flags such as company, product, period and categories, so that I can quickly analyze specific scenarios, identify patterns, and make better data-driven decisions. | FR4 | 5 | 2 |
 | 8 | Medium | As a user, I want to apply predefined filters in the ticket search, such company, product, status, priority, category, and subcategory, so that I can reduce search time, focus only on the most relevant cases, and avoid manually configuring filters every time I perform an analysis. | FR4 | 8 | 2 |
-| 9 | Low | As a user, I want to visualize the tickets linked to dashboards so that I can understand which tickets are impacting the process. |FR1, FR4 | 5 | 3 |
-| 10 | Low | As a user, I want the system to generate written reports based on AI-provided insights, so that I can easily understand patterns, trends, and peaks in tickets and share this information clearly with my team or managers. | FR6 | 8 | 3 |
-| 11 | Low | As a system administrator, I want only authorized users to access ticket insights and manage related data, so that sensitive information is protected and each user sees only data compatible with their authorization level. | FR5 | 4 | 3 |
+| 09 | Low | As a user, I want the system to generate written reports based on AI-provided insights, so that I can easily understand patterns, trends, and peaks in tickets and share this information clearly with my team or managers. | FR6 | 8 | 3 |
+| 10 | Low | As a system administrator, I want only authorized users to access ticket insights and manage related data, so that sensitive information is protected and each user sees only data compatible with their authorization level. | FR5 | 4 | 3 |
+| 11 | Low | As a user, I want to visualize the tickets linked to dashboards so that I can understand which tickets are impacting the process. |FR1, FR4 | 5 | 3 |
 
 
 <span id="cronograma">
