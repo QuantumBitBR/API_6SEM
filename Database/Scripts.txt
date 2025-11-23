@@ -1,0 +1,444 @@
+-- public.encrypt_ticket definição
+
+-- Drop table
+
+-- DROP TABLE encrypt_ticket;
+
+CREATE TABLE encrypt_ticket (
+	ticketid int8 NOT NULL,
+	keyencrypt bytea NOT NULL
+);
+
+
+-- public.encrypt_user definição
+
+-- Drop table
+
+-- DROP TABLE encrypt_user;
+
+CREATE TABLE encrypt_user (
+	id_user int4 NOT NULL,
+	key_encrypt varchar NOT NULL,
+	CONSTRAINT encrypt_user_pkey PRIMARY KEY (id_user)
+);
+
+
+-- public.auditlogs definição
+
+-- Drop table
+
+-- DROP TABLE auditlogs;
+
+CREATE TABLE auditlogs (
+	auditid bigserial NOT NULL,
+	entitytype varchar(50) NOT NULL,
+	entityid int8 NOT NULL,
+	operation varchar(20) NOT NULL,
+	performedby varchar(120) NULL,
+	performedat timestamp NULL,
+	detailsjson text NULL,
+	CONSTRAINT auditlogs_pkey PRIMARY KEY (auditid)
+);
+
+
+-- public.categories definição
+
+-- Drop table
+
+-- DROP TABLE categories;
+
+CREATE TABLE categories (
+	categoryid serial4 NOT NULL,
+	"name" varchar(100) NOT NULL,
+	CONSTRAINT categories_pkey PRIMARY KEY (categoryid)
+);
+CREATE INDEX index_categories_pk ON public.categories USING btree (categoryid);
+
+
+-- public.companies definição
+
+-- Drop table
+
+-- DROP TABLE companies;
+
+CREATE TABLE companies (
+	companyid serial4 NOT NULL,
+	"name" varchar(120) NOT NULL,
+	cnpj varchar(32) NULL,
+	segmento varchar(60) NULL,
+	createdat timestamp NULL,
+	CONSTRAINT companies_pkey PRIMARY KEY (companyid)
+);
+CREATE INDEX index_company_pk ON public.companies USING btree (companyid);
+
+
+-- public.departments definição
+
+-- Drop table
+
+-- DROP TABLE departments;
+
+CREATE TABLE departments (
+	departmentid serial4 NOT NULL,
+	"name" varchar(100) NOT NULL,
+	CONSTRAINT departments_pkey PRIMARY KEY (departmentid)
+);
+
+
+-- public.priorities definição
+
+-- Drop table
+
+-- DROP TABLE priorities;
+
+CREATE TABLE priorities (
+	priorityid serial4 NOT NULL,
+	"name" varchar(50) NOT NULL,
+	weight int4 NULL,
+	CONSTRAINT priorities_pkey PRIMARY KEY (priorityid)
+);
+CREATE INDEX index_priorities_pk ON public.priorities USING btree (priorityid);
+
+
+-- public.privacy_policy_version definição
+
+-- Drop table
+
+-- DROP TABLE privacy_policy_version;
+
+CREATE TABLE privacy_policy_version (
+	id int8 GENERATED ALWAYS AS IDENTITY( INCREMENT BY 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1 NO CYCLE) NOT NULL,
+	"text" text NOT NULL,
+	validity_date timestamp DEFAULT CURRENT_DATE NULL,
+	is_mandatory bool NULL,
+	CONSTRAINT privacy_policy_version_pkey PRIMARY KEY (id)
+);
+CREATE INDEX date_privacy_index ON public.privacy_policy_version USING btree (validity_date DESC);
+
+
+-- public.product_ai definição
+
+-- Drop table
+
+-- DROP TABLE product_ai;
+
+CREATE TABLE product_ai (
+	id serial4 NOT NULL,
+	nome text NOT NULL,
+	CONSTRAINT product_ai_pkey PRIMARY KEY (id)
+);
+
+
+-- public.products definição
+
+-- Drop table
+
+-- DROP TABLE products;
+
+CREATE TABLE products (
+	productid serial4 NOT NULL,
+	"name" varchar(150) NOT NULL,
+	code varchar(50) NULL,
+	description varchar(500) NULL,
+	isactive bool NULL,
+	createdat timestamp NULL,
+	CONSTRAINT products_pkey PRIMARY KEY (productid)
+);
+CREATE INDEX index_product_pk ON public.products USING btree (productid);
+
+
+-- public.sla_plans definição
+
+-- Drop table
+
+-- DROP TABLE sla_plans;
+
+CREATE TABLE sla_plans (
+	slaplanid serial4 NOT NULL,
+	"name" varchar(80) NOT NULL,
+	firstresponsemins int4 NULL,
+	resolutionmins int4 NULL,
+	CONSTRAINT sla_plans_pkey PRIMARY KEY (slaplanid)
+);
+
+
+-- public.statuses definição
+
+-- Drop table
+
+-- DROP TABLE statuses;
+
+CREATE TABLE statuses (
+	statusid serial4 NOT NULL,
+	"name" varchar(60) NOT NULL,
+	CONSTRAINT statuses_pkey PRIMARY KEY (statusid)
+);
+CREATE INDEX index_statuses_pk ON public.statuses USING btree (statusid);
+
+
+-- public.tags definição
+
+-- Drop table
+
+-- DROP TABLE tags;
+
+CREATE TABLE tags (
+	tagid serial4 NOT NULL,
+	"name" varchar(60) NOT NULL,
+	CONSTRAINT tags_pkey PRIMARY KEY (tagid)
+);
+
+
+-- public.user_authentication definição
+
+-- Drop table
+
+-- DROP TABLE user_authentication;
+
+CREATE TABLE user_authentication (
+	id int8 GENERATED ALWAYS AS IDENTITY( INCREMENT BY 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1 NO CYCLE) NOT NULL,
+	"name" varchar(100) NOT NULL,
+	"role" varchar(15) NOT NULL,
+	email varchar(100) NOT NULL,
+	"password" varchar(255) NOT NULL,
+	created_at timestamp NULL,
+	CONSTRAINT user_authentication_email_key UNIQUE (email),
+	CONSTRAINT user_authentication_pkey PRIMARY KEY (id)
+);
+
+
+-- public.agents definição
+
+-- Drop table
+
+-- DROP TABLE agents;
+
+CREATE TABLE agents (
+	agentid serial4 NOT NULL,
+	fullname varchar(120) NOT NULL,
+	email varchar(254) NULL,
+	phone varchar(40) NULL,
+	departmentid int4 NULL,
+	isactive bool NULL,
+	hiredat date NULL,
+	CONSTRAINT agents_pkey PRIMARY KEY (agentid),
+	CONSTRAINT fk_agents_department FOREIGN KEY (departmentid) REFERENCES departments(departmentid)
+);
+
+
+-- public.log_privacy_policy_accept_revoke definição
+
+-- Drop table
+
+-- DROP TABLE log_privacy_policy_accept_revoke;
+
+CREATE TABLE log_privacy_policy_accept_revoke (
+	id int8 GENERATED ALWAYS AS IDENTITY( INCREMENT BY 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1 NO CYCLE) NOT NULL,
+	user_id int8 NOT NULL,
+	privacy_id int8 NOT NULL,
+	action_date timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL,
+	action_description text NULL,
+	CONSTRAINT log_privay_policy_accept_revoke_pkey PRIMARY KEY (id),
+	CONSTRAINT fk_privacy FOREIGN KEY (privacy_id) REFERENCES privacy_policy_version(id)
+);
+
+
+-- public.privacy_policy_version_accept definição
+
+-- Drop table
+
+-- DROP TABLE privacy_policy_version_accept;
+
+CREATE TABLE privacy_policy_version_accept (
+	id_user int8 NOT NULL,
+	id_privacy_policy int8 NOT NULL,
+	validity_date timestamp DEFAULT now() NULL,
+	is_revoke bool DEFAULT false NULL,
+	CONSTRAINT fk_privacy_version_accept PRIMARY KEY (id_user, id_privacy_policy),
+	CONSTRAINT uq_user_privacy UNIQUE (id_user, id_privacy_policy),
+	CONSTRAINT fk_privacy_policy FOREIGN KEY (id_privacy_policy) REFERENCES privacy_policy_version(id),
+	CONSTRAINT privacy_policy_version_id_user_fkey FOREIGN KEY (id_user) REFERENCES user_authentication(id) ON DELETE CASCADE
+);
+
+
+-- public.subcategories definição
+
+-- Drop table
+
+-- DROP TABLE subcategories;
+
+CREATE TABLE subcategories (
+	subcategoryid serial4 NOT NULL,
+	categoryid int4 NOT NULL,
+	"name" varchar(100) NOT NULL,
+	CONSTRAINT subcategories_pkey PRIMARY KEY (subcategoryid),
+	CONSTRAINT fk_subcategories_category FOREIGN KEY (categoryid) REFERENCES categories(categoryid)
+);
+CREATE INDEX index_subcategories_pk ON public.subcategories USING btree (subcategoryid);
+
+
+-- public.users definição
+
+-- Drop table
+
+-- DROP TABLE users;
+
+CREATE TABLE users (
+	userid serial4 NOT NULL,
+	companyid int4 NULL,
+	fullname bytea NOT NULL,
+	email bytea NULL,
+	phone bytea NULL,
+	cpf bytea NULL,
+	createdat timestamp NULL,
+	isvip bool NULL,
+	CONSTRAINT users_pkey PRIMARY KEY (userid),
+	CONSTRAINT fk_users_company FOREIGN KEY (companyid) REFERENCES companies(companyid)
+);
+
+
+-- public.encrypt_user definição
+
+-- Drop table
+
+-- DROP TABLE encrypt_user;
+
+CREATE TABLE encrypt_user (
+	id_user int8 NOT NULL,
+	key_encrypt bytea NOT NULL,
+	CONSTRAINT encrypt_user_pkey PRIMARY KEY (id_user, key_encrypt),
+	CONSTRAINT fk_user_users FOREIGN KEY (id_user) REFERENCES users(userid)
+);
+
+
+-- public.tickets definição
+
+-- Drop table
+
+-- DROP TABLE tickets;
+
+CREATE TABLE tickets (
+	ticketid bigserial NOT NULL,
+	companyid int4 NOT NULL,
+	createdbyuserid int4 NOT NULL,
+	assignedagentid int4 NULL,
+	productid int4 NULL,
+	categoryid int4 NOT NULL,
+	subcategoryid int4 NULL,
+	priorityid int4 NOT NULL,
+	currentstatusid int4 NOT NULL,
+	slaplanid int4 NOT NULL,
+	title_without_encrypt text NOT NULL,
+	description_without_encrypt text NULL,
+	channel varchar(40) NULL,
+	device varchar(60) NULL,
+	createdat timestamp NULL,
+	firstresponseat timestamp NULL,
+	closedat timestamp NULL,
+	title bytea NULL,
+	description bytea NULL,
+	CONSTRAINT tickets_pkey PRIMARY KEY (ticketid),
+	CONSTRAINT fk_tickets_agent FOREIGN KEY (assignedagentid) REFERENCES agents(agentid),
+	CONSTRAINT fk_tickets_category FOREIGN KEY (categoryid) REFERENCES categories(categoryid),
+	CONSTRAINT fk_tickets_company FOREIGN KEY (companyid) REFERENCES companies(companyid),
+	CONSTRAINT fk_tickets_priority FOREIGN KEY (priorityid) REFERENCES priorities(priorityid),
+	CONSTRAINT fk_tickets_product FOREIGN KEY (productid) REFERENCES products(productid),
+	CONSTRAINT fk_tickets_sla FOREIGN KEY (slaplanid) REFERENCES sla_plans(slaplanid),
+	CONSTRAINT fk_tickets_status FOREIGN KEY (currentstatusid) REFERENCES statuses(statusid),
+	CONSTRAINT fk_tickets_subcategory FOREIGN KEY (subcategoryid) REFERENCES subcategories(subcategoryid),
+	CONSTRAINT fk_tickets_user FOREIGN KEY (createdbyuserid) REFERENCES users(userid)
+);
+CREATE INDEX index_tickets_pk ON public.tickets USING btree (ticketid);
+CREATE INDEX user_id_tickets_index ON public.tickets USING btree (createdbyuserid);
+
+
+-- public.ticketstatushistory definição
+
+-- Drop table
+
+-- DROP TABLE ticketstatushistory;
+
+CREATE TABLE ticketstatushistory (
+	historyid bigserial NOT NULL,
+	ticketid int8 NOT NULL,
+	fromstatusid int4 NULL,
+	tostatusid int4 NOT NULL,
+	changedat timestamp NULL,
+	changedbyagentid int4 NULL,
+	CONSTRAINT pk_ticketstatushistory PRIMARY KEY (historyid),
+	CONSTRAINT fk_ticketstatushistory_agent FOREIGN KEY (changedbyagentid) REFERENCES agents(agentid),
+	CONSTRAINT fk_ticketstatushistory_fromstatus FOREIGN KEY (fromstatusid) REFERENCES statuses(statusid),
+	CONSTRAINT fk_ticketstatushistory_ticket FOREIGN KEY (ticketid) REFERENCES tickets(ticketid),
+	CONSTRAINT fk_ticketstatushistory_tostatus FOREIGN KEY (tostatusid) REFERENCES statuses(statusid)
+);
+
+
+-- public.tickettags definição
+
+-- Drop table
+
+-- DROP TABLE tickettags;
+
+CREATE TABLE tickettags (
+	ticketid int8 NOT NULL,
+	tagid int4 NOT NULL,
+	CONSTRAINT pk_tickettags PRIMARY KEY (ticketid, tagid),
+	CONSTRAINT fk_tickettags_tag FOREIGN KEY (tagid) REFERENCES tags(tagid),
+	CONSTRAINT fk_tickettags_ticket FOREIGN KEY (ticketid) REFERENCES tickets(ticketid)
+);
+
+
+-- public.attachments definição
+
+-- Drop table
+
+-- DROP TABLE attachments;
+
+CREATE TABLE attachments (
+	attachmentid bigserial NOT NULL,
+	ticketid int8 NOT NULL,
+	filename varchar(255) NOT NULL,
+	mimetype varchar(100) NULL,
+	sizebytes int8 NULL,
+	storagepath varchar(400) NOT NULL,
+	uploadedat timestamp NULL,
+	CONSTRAINT pk_attachments PRIMARY KEY (attachmentid),
+	CONSTRAINT fk_attachments_ticket FOREIGN KEY (ticketid) REFERENCES tickets(ticketid)
+);
+
+
+-- public.encrypt_ticket definição
+
+-- Drop table
+
+-- DROP TABLE encrypt_ticket;
+
+CREATE TABLE encrypt_ticket (
+	ticketid int8 NOT NULL,
+	keyencrypt bytea NOT NULL,
+	CONSTRAINT pk_encrypt_ticket PRIMARY KEY (ticketid),
+	CONSTRAINT fk_encrypt_ticket_ticket FOREIGN KEY (ticketid) REFERENCES tickets(ticketid)
+);
+CREATE INDEX index_encrypt_ticket_pk ON public.encrypt_ticket USING btree (ticketid);
+
+
+-- public.ticketinteractions definição
+
+-- Drop table
+
+-- DROP TABLE ticketinteractions;
+
+CREATE TABLE ticketinteractions (
+	interactionid bigserial NOT NULL,
+	ticketid int8 NOT NULL,
+	authortype bpchar(1) NOT NULL,
+	authoruserid int4 NULL,
+	authoragentid int4 NULL,
+	message varchar(255) NOT NULL,
+	ispublic bool NULL,
+	createdat timestamp NULL,
+	CONSTRAINT pk_ticketinteractions PRIMARY KEY (interactionid),
+	CONSTRAINT fk_ticketinteractions_agent FOREIGN KEY (authoragentid) REFERENCES agents(agentid),
+	CONSTRAINT fk_ticketinteractions_ticket FOREIGN KEY (ticketid) REFERENCES tickets(ticketid),
+	CONSTRAINT fk_ticketinteractions_user FOREIGN KEY (authoruserid) REFERENCES users(userid)
+);
