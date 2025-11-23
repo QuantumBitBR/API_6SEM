@@ -31,6 +31,7 @@ By automatically generating insightful reports, the platform not only reduces re
 - <a href="https://github.com/QuantumBitBR/API_6SEM_FRONT" >Front-end Repository</a>
 - <a href="https://www.figma.com/design/Bj4I4neHqiob9svy5Pw7nj/6SEM_Wireframe?node-id=0-1&t=DrLhuD78MEdMlUF0-1">Figma - WireFrame</a>
 - <a href="https://colab.research.google.com/drive/1MeHgPQNOjSO6QcSH3VmlZtNALWgi6mm8?usp=sharing">Artificial Intelligence Training</a>
+- <a href="https://github.com/QuantumBitBR/API_6SEM/blob/main/Database/Scripts.md">SQL Script</a>
 - <a href="https://github.com/QuantumBitBR/API_6SEM/wiki/Sprint-1">Sprint 1</a>
 - <a href="https://github.com/QuantumBitBR/API_6SEM/wiki/Sprint-2">Sprint 2</a>
 - <a href="https://github.com/QuantumBitBR/API_6SEM/wiki/Sprint-3">Sprint 3</a>
