@@ -1,3 +1,6 @@
+## Keys Database
+
+```
 -- public.encrypt_ticket definição
 
 -- Drop table
@@ -22,6 +25,11 @@ CREATE TABLE encrypt_user (
 	CONSTRAINT encrypt_user_pkey PRIMARY KEY (id_user)
 );
 
+```
+
+## Main Database
+
+```
 
 -- public.auditlogs definição
 
@@ -328,8 +336,6 @@ CREATE TABLE tickets (
 	priorityid int4 NOT NULL,
 	currentstatusid int4 NOT NULL,
 	slaplanid int4 NOT NULL,
-	title_without_encrypt text NOT NULL,
-	description_without_encrypt text NULL,
 	channel varchar(40) NULL,
 	device varchar(60) NULL,
 	createdat timestamp NULL,
@@ -442,3 +448,5 @@ CREATE TABLE ticketinteractions (
 	CONSTRAINT fk_ticketinteractions_ticket FOREIGN KEY (ticketid) REFERENCES tickets(ticketid),
 	CONSTRAINT fk_ticketinteractions_user FOREIGN KEY (authoruserid) REFERENCES users(userid)
 );
+
+```
